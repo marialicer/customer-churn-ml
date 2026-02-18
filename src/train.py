@@ -53,3 +53,13 @@ df = pd.read_csv("../data/raw/abt_churn_telco.csv")
 # visualizar as 5 primeiras linhas para checar estrutura dos dados
 df.head()
 # %%
+# transformar variável alvo (target) em número 0 e 1
+df["Churn"] = df["Churn"].map({"Yes": 1, "No": 0})
+# %%
+df["Partner"] = df["Partner"].str.strip()
+df["Partner"] = df["Partner"].map({"Yes":1,"No": 0})
+df.head()
+# %%
+df["Dependents"] = df["Dependents"].str.strip()
+df["Dependents"] = df["Dependents"].map({"Yes":1,"No": 0})
+# %%
